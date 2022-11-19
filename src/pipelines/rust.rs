@@ -241,6 +241,9 @@ impl RustApp {
             args.push(bin);
         }
 
+        args.push("-Z");
+        args.push("bindeps");
+
         match &self.cargo_features {
             Features::All => args.push("--all-features"),
             Features::Custom {
